@@ -24,7 +24,7 @@ function greet(){
     const newOkButton = document.createElement('button')
     newOkButton.innerHTML = 'ok'
     newOkButton.addEventListener('click', function(){
-        form.innerHTML = 'h1> Supper! <h1>'
+        form.innerHTML = '<h1> Supert! <h1>'
     })
     form.appendChild(newOkButton)
 
