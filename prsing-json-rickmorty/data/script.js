@@ -21,9 +21,11 @@ RickMorty.results.map(
 const filter = () => {
     let characters = document.querySelector('#characters')
     characters.innerHTML = ''
-    let newArray = RickMorty.results.filter(element => element.name.toLowerCase(inp.value))
+    
+    let newArray = RickMorty.results.filter(element => element.name.toLowerCase().includes(inp.value))
+
     newArray.map(element => showCharacter(element))
     
 }
 
-inp. addEventListener('input', filter)
+inp.addEventListener('input', filter)
