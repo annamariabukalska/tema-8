@@ -1,20 +1,33 @@
 <script>
+	import {fade, fly, scale } from 'svelte/transition'
 	const api_key = 'a5356865ca494805be50c304df2b02f7'
 	let q = ''
 	let article
+
 	const getNews = () => {
+		const getGif = () => { article() 
+		gif = null
+		}
 		fetch(`https://newsapi.org/v2/everything?q=${q}&apiKey=${api_key}`)
 			.then( res => res.json() )
 				.then( json => {
 					console.log(json.articles[0])
 					article = json.articles[0]
 				})
+		
 	}
 </script>
 
 <main>
 <header>
-	<input placeholder="type to search" type="text" bind:value={q}>
+	<input 
+	placeholder="type to search" 
+	type="text" 
+	bind:value={q}
+	on:keydown = {event => event.key == 'Enter' ? getGif() : 'article()' } 
+	on:click = {e => e.target.value = ''}
+	on:focus = {e => e.target.value = ''}
+	in:fly = {{ y:200, duraction:2000}}>
 	<button on:click={getNews}>ok</button>
 </header>
 
