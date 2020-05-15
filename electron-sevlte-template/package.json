@@ -1,0 +1,4 @@
+"forge": {
+    "packagerConfig": {
+      "icon": "public/AppIcon.icns"
+    },
