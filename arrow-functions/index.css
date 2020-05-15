@@ -3,14 +3,12 @@ html {
     margin: 0;
     padding: 0;
     font-family: Arial;
-    
+    scroll-snap-type: y mandatory;
+
+}
 
 * {
     box-sizing: border-box;
-}
-
-html{
-    scroll-snap-type: y mandatory;}
 }
 
 main {
@@ -20,12 +18,17 @@ main {
 }
 
 section{
-    width: 100vw;
-    height: 100vh;
+    width: 30vw;
+    height: 30vh;
     display: grid;
+    margin: 0px auto;
     place-items: center;
     scroll-snap-align: center;
     scroll-snap-stop: always;
     border: 1px solid white;
     background-size: cover;
+    font-weight: bold;
+    text-transform: uppercase; 
+    letter-spacing: 0.2em;
+    border-width: 2px;
 }

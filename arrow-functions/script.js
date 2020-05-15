@@ -1,4 +1,4 @@
-console.log('i am here');
+console.log('I am here');
 
 
 function square(tall, name){
@@ -12,15 +12,15 @@ const squareA = tall => tall * 15 + ' er resultatet'
 
 console.log(squareA(21))
 
-const fler = (name1, name2) => 'Hei' + name1 + ' og ' + name2
+const fler = (name1, name2) => 'Hei ' + name1 + ' og ' + name2
 
 console.log(fler('Simon', 'Per'))
 
 setTimeout(() => document.querySelector('body').style.backgroundColor='orange', 2000)
 
-const antallTegn = ord => ' Dette ord har ' + ord.length + 'karakter'
+const antallTegn = ord => ' Dette ord har ' + ord.length + ' karakter '
 
-console.log(antallTegn('nikodemos'))
+console.log(antallTegn(' nikodemos '))
 
 const tallene = [12, 3, 4, 56, 67, 54, 3, 44, 43, 32]
 
