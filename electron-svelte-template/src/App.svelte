@@ -1,22 +1,10 @@
 <script>
-
 	//context menu
 	const { remote } = require('electron')
 	const { Menu, MenuItem } = remote
 	let info = 'Nothing happening yet'
-</script>
 
-<main>
-	<h1>Svelte in Electron</h1>
-	<p>{info}</p>
-
-<button on:click={ () => showNotification() }>klikk mig</button>
-
-	
-</main>
-
-
-	//notifications
+		//notifications
 	const showNotification = () => {
 		let myNotification = new Notification('Hello', {
 		body: 'You are now officially part of the system OS'
@@ -24,12 +12,18 @@
 		myNotification.onclick = () => {
 			info = 'Notification clicked'
 		}
+		myNotification.show();
 	}
 
 	const menu = new Menu()
-	menu.append(new MenuItem({ label: 'meny 1', click() { info = 'item 1 klikket' } }))
-	menu.append(new MenuItem({ type: 'separator' }))
-	menu.append(new MenuItem({ label: 'meny 2', click() { info = 'item 2 klikket' } } ))
+	menu.append(new MenuItem({ 
+		label: 'meny 1', click() { 
+		info = 'item 1 klikket' } }))
+	menu.append(new MenuItem({ 
+		type: 'separator' }))
+	menu.append(new MenuItem({ 
+		label: 'meny 2', click() { 
+		info = 'item 2 klikket' } } ))
 
 
 	const context = e => {
@@ -42,10 +36,20 @@
 		window.alert(navigator.onLine ? 'you\'re online sirs' : 'you\'re offline')
 		info = 'Alert accepted'
 	}
+</script>
 
-<div class="stuff" on:contextmenu={context}>
+<main>
+	<h1>Svelte in Electron</h1>
+	<p>{info}</p>
+
+<button on:click={ () => showNotification() }>klikk meg</button>
+<button on:click={ () => amIOnline() }>Online</button>
+
+<div class="stuff" on:contextmenu={context}></div>
 
 
+	
+</main>
 
 <style>
 

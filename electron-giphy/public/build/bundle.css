@@ -1,0 +1,3 @@
+body, html{margin:0;padding:0}*{box-sizing:border-box}main.svelte-184nt2r.svelte-184nt2r{display:grid;place-items:center;height:100%;position:relative}.heart.svelte-184nt2r.svelte-184nt2r{position:absolute;bottom:2rem;height:4rem;width:4rem;fill:gray}img.svelte-184nt2r.svelte-184nt2r{max-height:40vh;width:60vw;object-fit:cover}header.svelte-184nt2r.svelte-184nt2r{position:absolute;top:2rem;width:100%;display:grid;padding:0 20vw 0 20vw}.favorites.svelte-184nt2r.svelte-184nt2r{max-height:60vh;overflow:scroll;display:grid;gap:.2rem;grid-template-columns:repeat(4, 200px)}.favorites.svelte-184nt2r img.svelte-184nt2r{width:100%;height:200px;object-fit:cover}
+
+/*# sourceMappingURL=bundle.css.map */

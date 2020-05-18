@@ -283,6 +283,13 @@ var app = (function () {
         else
             dispatch_dev("SvelteDOMSetAttribute", { node, attribute, value });
     }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.data === data)
+            return;
+        dispatch_dev("SvelteDOMSetData", { node: text, data });
+        text.data = data;
+    }
     class SvelteComponentDev extends SvelteComponent {
         constructor(options) {
             if (!options || (!options.target && !options.$$inline)) {
@@ -309,8 +316,13 @@ var app = (function () {
     	let h1;
     	let t1;
     	let p;
+    	let t2;
     	let t3;
-    	let button;
+    	let button0;
+    	let t5;
+    	let button1;
+    	let t7;
+    	let div;
     	let dispose;
 
     	const block = {
@@ -320,16 +332,24 @@ var app = (function () {
     			h1.textContent = "Svelte in Electron";
     			t1 = space();
     			p = element("p");
-    			p.textContent = `${/*info*/ ctx[0]}`;
+    			t2 = text(/*info*/ ctx[0]);
     			t3 = space();
-    			button = element("button");
-    			button.textContent = "klikk mig";
-    			attr_dev(h1, "class", "svelte-2x1evt");
-    			add_location(h1, file, 5, 1, 64);
-    			add_location(p, file, 6, 1, 93);
-    			add_location(button, file, 8, 0, 108);
-    			attr_dev(main, "class", "svelte-2x1evt");
-    			add_location(main, file, 4, 0, 56);
+    			button0 = element("button");
+    			button0.textContent = "klikk meg";
+    			t5 = space();
+    			button1 = element("button");
+    			button1.textContent = "Online";
+    			t7 = space();
+    			div = element("div");
+    			attr_dev(h1, "class", "svelte-1tiz53d");
+    			add_location(h1, file, 41, 1, 982);
+    			add_location(p, file, 42, 1, 1011);
+    			add_location(button0, file, 44, 0, 1026);
+    			add_location(button1, file, 45, 0, 1091);
+    			attr_dev(div, "class", "stuff svelte-1tiz53d");
+    			add_location(div, file, 47, 0, 1147);
+    			attr_dev(main, "class", "svelte-1tiz53d");
+    			add_location(main, file, 40, 0, 974);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -339,16 +359,28 @@ var app = (function () {
     			append_dev(main, h1);
     			append_dev(main, t1);
     			append_dev(main, p);
+    			append_dev(p, t2);
     			append_dev(main, t3);
-    			append_dev(main, button);
-    			dispose = listen_dev(button, "click", /*click_handler*/ ctx[1], false, false, false);
+    			append_dev(main, button0);
+    			append_dev(main, t5);
+    			append_dev(main, button1);
+    			append_dev(main, t7);
+    			append_dev(main, div);
+
+    			dispose = [
+    				listen_dev(button0, "click", /*click_handler*/ ctx[8], false, false, false),
+    				listen_dev(button1, "click", /*click_handler_1*/ ctx[9], false, false, false),
+    				listen_dev(div, "contextmenu", /*context*/ ctx[2], false, false, false)
+    			];
     		},
-    		p: noop,
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*info*/ 1) set_data_dev(t2, /*info*/ ctx[0]);
+    		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -364,9 +396,72 @@ var app = (function () {
     }
 
     function instance($$self, $$props, $$invalidate) {
+    	const { remote } = require("electron");
+    	const { Menu, MenuItem } = remote;
     	let info = "Nothing happening yet";
+
+    	//notifications
+    	const showNotification = () => {
+    		let myNotification = new Notification("Hello",
+    		{
+    				body: "You are now officially part of the system OS"
+    			});
+
+    		myNotification.onclick = () => {
+    			$$invalidate(0, info = "Notification clicked");
+    		};
+
+    		myNotification.show();
+    	};
+
+    	const menu = new Menu();
+
+    	menu.append(new MenuItem({
+    			label: "meny 1",
+    			click() {
+    				$$invalidate(0, info = "item 1 klikket");
+    			}
+    		}));
+
+    	menu.append(new MenuItem({ type: "separator" }));
+
+    	menu.append(new MenuItem({
+    			label: "meny 2",
+    			click() {
+    				$$invalidate(0, info = "item 2 klikket");
+    			}
+    		}));
+
+    	const context = e => {
+    		e.preventDefault(); //hindrer det vanlige højreklikk
+    		menu.popup({ window: remote.getCurrentWindow() }); //kalder menufunksjon i Electron
+    	};
+
+    	const amIOnline = () => {
+    		window.alert(navigator.onLine
+    		? "you're online sirs"
+    		: "you're offline");
+
+    		$$invalidate(0, info = "Alert accepted");
+    	};
+
     	const click_handler = () => showNotification();
-    	$$self.$capture_state = () => ({ info });
+    	const click_handler_1 = () => amIOnline();
+
+    	$$self.$capture_state = () => ({
+    		remote,
+    		Menu,
+    		MenuItem,
+    		info,
+    		showNotification,
+    		menu,
+    		context,
+    		amIOnline,
+    		require,
+    		Notification,
+    		window,
+    		navigator
+    	});
 
     	$$self.$inject_state = $$props => {
     		if ("info" in $$props) $$invalidate(0, info = $$props.info);
@@ -376,7 +471,18 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [info, click_handler];
+    	return [
+    		info,
+    		showNotification,
+    		context,
+    		amIOnline,
+    		remote,
+    		Menu,
+    		MenuItem,
+    		menu,
+    		click_handler,
+    		click_handler_1
+    	];
     }
 
     class App extends SvelteComponentDev {

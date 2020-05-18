@@ -15,7 +15,7 @@
 	})*/
 
 	
-	$: beskjed = kanjegfaais ? 'Ja, du kan få is' : 'Nei, og nå må du vente endda lengere'
+	$: beskjed = kanjegfaais ? 'Ja, du kan få is' : 'Nei, og nå må du vente enda lengere'
 
 	$: kanjegfaais = alarm < $time ? true : false
 
@@ -39,7 +39,7 @@
 	}
 
 </script>
-	<svelte:window on:keydown={ e => e.key == 'f' ? setMinutes = !setMinutes : '' }/>
+	<svelte:window on:keydown={ e => e.key == 'f' ? setMinutes = !setMinutes : ' ' }/>
 	{#if setMinutes}
 		<div transition:fly={{x:-1000}} class="set">
 			<div>
@@ -59,7 +59,10 @@
 </main>
 
 <style>
-	:global(body){margin:0;padding:0}
+	:global(body){
+		margin:0;
+		padding:0
+	}
 	.set{
 		position:absolute;
 		width:100vw;
@@ -68,6 +71,7 @@
 		place-items:center;
 		background:#4285F4;
 		z-index:1;
+	}
 	main {
 		display:grid;
 		place-items:center;
