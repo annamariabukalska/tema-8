@@ -1,0 +1,35 @@
+html, body {
+    margin: 0;
+    padding: 2rem;
+}
+
+#plants{
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1 fr));
+    gap: 1rem;
+}
+
+.plant {
+    background-color: #eee;
+    height: 220px;
+    padding: .6rem;
+    display: grid;
+    border:  1px solid #ddd;
+}
+
+.plant h2{
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.plant p{
+    align-self: end;
+    text-transform: uppercase;
+    font-size:.6rem;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+}

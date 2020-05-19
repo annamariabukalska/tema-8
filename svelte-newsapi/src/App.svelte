@@ -1,6 +1,8 @@
 <script>
 	import {fade, fly, scale } from 'svelte/transition'
-	const api_key = 'a5356865ca494805be50c304df2b02f7'
+	import { apikeys } from '/Users/Anna/Documents/Kristiania/apikeys/apikeys.js'
+
+	let api_key = api_key.newsapi
 	let q = ''
 	let article
 
@@ -24,7 +26,7 @@
 	placeholder="type to search" 
 	type="text" 
 	bind:value={q}
-	on:keydown = {event => event.key == 'Enter' ? getGif() : 'article()' } 
+	on:keydown = {event => event.key == 'Enter' ? 'getGif()' : 'article()' } 
 	on:click = {e => e.target.value = ''}
 	on:focus = {e => e.target.value = ''}
 	in:fly = {{ y:200, duraction:2000}}>
