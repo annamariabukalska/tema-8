@@ -1,6 +1,5 @@
 # Interaksjonsdesign - Applikasjonsutvikling: tema-8
 
-Ovelser på JavaScript:
 Mål:
 
 - Analysere og planlegge oppgaven (algoritmisk tekning)
@@ -15,5 +14,18 @@ Mål:
     - map()
     - filter()
     - object Array
-    - Array find Array Spread
-  
+    - Array find 
+    - Array Spread
+ - JSON en felles standard for online data
+ - Importere data i lokal fil 
+ - Modern JavaScript
+ - JSON and Object Arrays:
+    - Javascript Object
+    - Arrays of Javascript Objects
+    - Iterating Object Arrays with forEarch
+    - Filtering Object Arrays
+    - Array.find()
+    - Array.filter()
+    - Arrays.includes()
+    - Iterating arrays with map()
+    - JSON object from file
