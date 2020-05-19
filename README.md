@@ -29,3 +29,6 @@ Mål:
     - Arrays.includes()
     - Iterating arrays with map()
     - JSON object from file
+ - Bygge en nettside med JSON data og stylling
+     
+    
