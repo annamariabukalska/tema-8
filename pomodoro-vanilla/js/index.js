@@ -71,7 +71,7 @@ const countDown = () => {
     }
 }
 
-
+        /*------Oppgaven------*/
 //Vi skal bruke fire funksjoner: 
 //start timeren (klikk på startknapp)
 //vis tiden (sett minutter og sekunder inn på siden)
