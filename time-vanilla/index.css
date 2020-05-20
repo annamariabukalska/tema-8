@@ -29,7 +29,7 @@ main {
 #alarm{
     height: 100vh;
     width: 30vw;
-    background-color: #4285F4;
+    background-color: lightyellow;
     display: grid;
     place-items: center;
     position: absolute;
@@ -40,13 +40,23 @@ main {
 
 }
 
-#showAlarm{
+#showAlarm, #setAlarm{
     position: absolute;
-    bottom: 2rem;
+    bottom: 6rem;
     left: 2rem;
     background: white;
-    padding: .4rem;
+    padding: .5rem;
     border-radius: 1rem;
     outline: none;
     cursor: pointer;
+}
+
+input{
+    padding:.6rem;
+    font-size:18px;
+}
+
+#description{
+    position: absolute;
+
 }
