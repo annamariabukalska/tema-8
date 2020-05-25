@@ -342,14 +342,14 @@ var app = (function () {
     			t7 = space();
     			div = element("div");
     			attr_dev(h1, "class", "svelte-1tiz53d");
-    			add_location(h1, file, 41, 1, 982);
-    			add_location(p, file, 42, 1, 1011);
-    			add_location(button0, file, 44, 0, 1026);
-    			add_location(button1, file, 45, 0, 1091);
+    			add_location(h1, file, 40, 1, 969);
+    			add_location(p, file, 41, 1, 998);
+    			add_location(button0, file, 43, 0, 1013);
+    			add_location(button1, file, 44, 0, 1084);
     			attr_dev(div, "class", "stuff svelte-1tiz53d");
-    			add_location(div, file, 47, 0, 1147);
+    			add_location(div, file, 46, 0, 1140);
     			attr_dev(main, "class", "svelte-1tiz53d");
-    			add_location(main, file, 40, 0, 974);
+    			add_location(main, file, 39, 0, 961);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -401,8 +401,8 @@ var app = (function () {
     	let info = "Nothing happening yet";
 
     	//notifications
-    	const showNotification = () => {
-    		let myNotification = new Notification("Hello",
+    	const showNotification = text => {
+    		let myNotification = new Notification(`Hello ${text}`,
     		{
     				body: "You are now officially part of the system OS"
     			});
@@ -410,8 +410,6 @@ var app = (function () {
     		myNotification.onclick = () => {
     			$$invalidate(0, info = "Notification clicked");
     		};
-
-    		myNotification.show();
     	};
 
     	const menu = new Menu();
@@ -445,7 +443,7 @@ var app = (function () {
     		$$invalidate(0, info = "Alert accepted");
     	};
 
-    	const click_handler = () => showNotification();
+    	const click_handler = () => showNotification("Anna");
     	const click_handler_1 = () => amIOnline();
 
     	$$self.$capture_state = () => ({

@@ -5,14 +5,13 @@
 	let info = 'Nothing happening yet'
 
 		//notifications
-	const showNotification = () => {
-		let myNotification = new Notification('Hello', {
+	const showNotification = (text) => {
+		let myNotification = new Notification(`Hello ${text}`, {
 		body: 'You are now officially part of the system OS'
 		})
 		myNotification.onclick = () => {
 			info = 'Notification clicked'
 		}
-		myNotification.show();
 	}
 
 	const menu = new Menu()
@@ -42,7 +41,7 @@
 	<h1>Svelte in Electron</h1>
 	<p>{info}</p>
 
-<button on:click={ () => showNotification() }>klikk meg</button>
+<button on:click={ () => showNotification("Anna") }>klikk meg</button>
 <button on:click={ () => amIOnline() }>Online</button>
 
 <div class="stuff" on:contextmenu={context}></div>
