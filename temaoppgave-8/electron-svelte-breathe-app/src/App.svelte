@@ -13,7 +13,7 @@ import MoodView from './components/MoodView.svelte'
 		'/': Start,
 		'/reminders': Reminders,
 		'/favorites': Favorites,
-		'/mood': MoodView,
+		'/mood/:first': MoodView,
 	}
 
 	//notifications
