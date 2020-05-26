@@ -6,7 +6,8 @@
 		myNotification.onclick = () => {
 			info = 'Notification clicked'
 		}
-	}
+  }
+  
 </script>
 
 <main>
