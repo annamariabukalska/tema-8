@@ -1,21 +1,63 @@
 <script>
-
+import { onMount } from 'svelte';
 export let params = {}
 let addFavorite = () => {
     localStorage.setItem("favorites", params.first)
 }
+
+let backgroundImage
+let description = "kommer her"
+let audioSrc
+let color
+
+    onMount(async () => {
+        if (params.first === "excited") {
+            backgroundImage = "../img/excited.jpg"
+            color = ""
+            description = ""
+            audioSrc = "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+        } else if (params.first === "calm") {
+            backgroundImage = "../img/calm.jpg"
+            color = ""
+            description = ""
+            audioSrc = "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+        } else if (params.first === "surprised") {
+            backgroundImage = "../img/surprised.jpg"
+            color = ""
+            description = ""
+            audioSrc = "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+        } else if (params.first === "happy") {
+            backgroundImage = "../img/happy.jpg"
+            color = ""
+            description = ""
+            audioSrc = "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+        } else if (params.first === "angry") {
+            backgroundImage = "../img/angry.jpg"
+            color = ""
+            description = ""
+            audioSrc = "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+        } else if (params.first === "sad") {
+            backgroundImage = "../img/sad.jpg"
+            color = ""
+            description = ""
+            audioSrc = "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+        } else {
+            alert("Feil id")
+        }
+    })
+
 </script>
 
-<main>
+<main style="background-image: url('{backgroundImage}')">
 
-    <audio controls src="https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"></audio>
+    <audio controls src=""></audio>
 
     <div class="splash-box">    
     <button id="play">▶</button>
 
     <h1>{params.first}</h1>
     <h2>Spill av og pust ut...</h2>
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+    <p>{description}</p>
 
     <button id="addFavorite" on:click={addFavorite} > + Legg til favoritt</button>
     </div>
@@ -23,7 +65,6 @@ let addFavorite = () => {
 
 <style>
     main {
-        background-image: url("../../img/happy.jpg");
         background-size: cover;
     }
 

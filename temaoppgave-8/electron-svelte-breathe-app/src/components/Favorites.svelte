@@ -20,9 +20,6 @@
 </main>
 
 <style>
-main{
-    
-}
 
 #title{
     text-align: center;
