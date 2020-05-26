@@ -32,6 +32,10 @@
 </main>
 
 <style>
+
+main {
+    text-align: center;
+}
 .reminder {
     display: grid;
     gap: .2rem;
