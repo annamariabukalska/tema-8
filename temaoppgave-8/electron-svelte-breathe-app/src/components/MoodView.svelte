@@ -8,7 +8,7 @@ let addFavorite = () => {
 
 <main>
 
-    <!--<audio src=""></audio>-->
+    <audio controls src="https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"></audio>
 
     <div class="splash-box">    
     <button id="play">▶</button>
@@ -24,7 +24,7 @@ let addFavorite = () => {
 <style>
     main {
         background-image: url("../../img/happy.jpg");
-            background-size: cover;
+        background-size: cover;
     }
 
     #addFavorite {
@@ -53,6 +53,5 @@ let addFavorite = () => {
         border-radius: 80%;
         background-color: #FFFFFF;
         color: #DD6A77;
-
     }
 </style>
