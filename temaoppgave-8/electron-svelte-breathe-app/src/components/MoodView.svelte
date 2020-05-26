@@ -18,6 +18,8 @@ let addFavorite = () => {
 
     localStorage.setItem("favorites", JSON.stringify(favorites))
 
+    alert(`${params.first} ble lagt til som ny favoritt 🧘🏻‍♀️`)
+
 
 }
 
@@ -73,7 +75,8 @@ let color
     <audio controls preload src={audioSrc}></audio>
 
     </div>
-    <button id="addFavorite" on:click={addFavorite} > + Legg til favoritt</button>
+    <button id="addFavorite" on:click={addFavorite}> + Legg til favoritt</button>
+
 </main>
 
 <style>

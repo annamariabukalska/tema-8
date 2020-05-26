@@ -41,7 +41,7 @@ let active = { Mandag: false, Tirsdag: false, Onsdag: false, Torsdag: false, Fre
 
      </div>
 
-     <button on:click={ () => showNotification("Anna") } id="start-button">Start</button>
+     <button on:click={ () => showNotification("Anna") } id="start-button">Lagre</button>
 
    
 </main>
