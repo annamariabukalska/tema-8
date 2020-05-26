@@ -28,7 +28,7 @@ main {
 	background-color: #FAFAFA;
 }
 
-.welcome-container{
+.welcome-container {
 	border: .1rem solid;
 	background-color: #FFFFFF;
     width: 80%;
@@ -58,22 +58,22 @@ main {
 	box-shadow: #000000 11%;
 }
 
-#excited{
+#excited {
 	background-color: #DCD1E4;
 }	
-#calm{
+#calm {
 	background-color: #F7E5CD;
 }
-#surprised{
+#surprised {
 	background-color: #B5DEB9;
 }
-#happy{
+#happy {
 	background-color: #F6DDE0;
 }
-#angry{
+#angry {
 	background-color: #CCDAFB;
 }
-#sad{
+#sad {
 	background-color: #F5F5F5;
 }
 h1 {

@@ -1,5 +1,4 @@
 <script>
-    let favorites = []
 </script> 
 
 <main>

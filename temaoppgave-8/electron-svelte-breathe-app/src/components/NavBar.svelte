@@ -3,7 +3,7 @@
 </script>
 
 <nav>
-<a href="#/">Start</a>
+<a id="favoritter" href="#/">Start</a>
 <a href="#/reminders">Påminnelser</a>
 <a href="#/favorites">Favoritter</a>
 
@@ -13,7 +13,9 @@
 <style>
     nav {
         display: flex;
-        background-color: aquamarine;
+        background-color: #D8E3D8;
         padding: 8px;
     }
+
+    
 </style>
