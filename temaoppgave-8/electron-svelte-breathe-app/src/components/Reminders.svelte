@@ -1,3 +1,14 @@
+<script>
+  const showNotification = (text) => {
+		let myNotification = new Notification(`Hello ${text}🤩`, {
+		body: 'Dine påminnelser er lagret nå!'
+		})
+		myNotification.onclick = () => {
+			info = 'Notification clicked'
+		}
+	}
+</script>
+
 <main>
     <h1>Sett påminnelse</h1>
 
@@ -26,7 +37,7 @@
 
      </div>
 
-     <button id="start-button">Start</button>
+     <button on:click={ () => showNotification("Anna") } id="start-button">Start</button>
 
    
 </main>
@@ -60,12 +71,15 @@ main {
 }
 
 #start-button {
-    border-radius: 30px;
-    padding: 3rem;
-    margin: 10rem;
+    border-radius: 4rem;
+    padding: 1rem;
+    margin: 100px;
     background-color: #91887E;
     color: white;
     letter-spacing: .1rem;
     cursor: pointer;
+    min-width: 240px;
+    border: 0;
+    box-shadow: #000000 11%;
 }
 </style>
