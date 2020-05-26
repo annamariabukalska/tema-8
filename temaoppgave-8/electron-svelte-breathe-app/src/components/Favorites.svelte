@@ -4,16 +4,24 @@
     let favorites = []
 
     onMount(async () => {
-        favorites = localStorage.getItem("favorites")
-        console.log(favorites)
+
+        if (localStorage.getItem("favorites")) {
+            favorites = JSON.parse(localStorage.getItem("favorites"))
+        }
+        
     })
+
+    
+
 
 </script> 
 
 <main>
 <h1 id="title">Favoritter</h1>
-<div class="favorite-list">
-    <MoodButton id={favorites} title={favorites}/>
+	<div class="button-grid">
+    {#each favorites as fav, i}
+        <MoodButton id={fav} title={fav}/>
+    {/each}
     
 </div>
 
@@ -23,6 +31,10 @@
 
 #title{
     text-align: center;
+    margin-top: 100px;
 }
 
 </style>
+
+
+

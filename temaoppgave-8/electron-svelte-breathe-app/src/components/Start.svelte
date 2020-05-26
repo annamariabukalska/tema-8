@@ -28,7 +28,7 @@ let info = 'Hvordan føler du deg idag?'
 main {
 	text-align: center;
 	background-color: #FAFAFA;
-	padding-top: 10%;
+	padding-top: 110px;
 }
 
 .welcome-container {
@@ -47,21 +47,12 @@ main {
 	font-size: 14pt;
 	font-weight: bold;
 }
-.button-grid {
-	display: grid;
-	gap: .2rem;
-	justify-content: flex-start;
-	padding: .2rem;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	height: 30vh;
-
-}
-
 
 h1 {
 	color: black;
 	text-transform: uppercase;
 	font-size: 4em;
 	font-weight: 100;
+	margin-bottom: 6px;
 }
 </style>

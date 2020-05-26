@@ -16,7 +16,17 @@ main {
 	height: 100%;
 	/* Skjuler overflow-innhold venstre-høyre */
 	overflow-x: hidden;
+	user-select: none;  /*fjerner markering*/
 }
+.button-grid {  /*felles css for fav og start*/
+	display: grid;
+	gap: .2rem;
+	justify-content: flex-start;
+	padding: .2rem;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	height: 30vh;
+}
+
 
 a {
 	color: rgb(0,100,200);

@@ -14,36 +14,29 @@ import { push } from 'svelte-spa-router'
     Favoritter
     </button>
 
-
-<input type="text" placeholder="Søk">
 </nav>
 
 <style>
 
 nav {
     display: flex;
-    background-color: #D8E3D8;
+    background-color: #b7b7b78a;
     padding: 8px;
     text-align: center;
     color:white;
     transition: .5s;
-    justify-content: flex-end;    
+    justify-content: flex-end;  
+    position: fixed;
+    width: 100%;  
 }
 
 #start {
     margin-right: auto;
 }
 
-input {
-    border-radius: .4rem;
- } 
-input:focus {
-    outline: none;
-}
-
 img {
-  margin-right: 5px;
-  width: 32px;
+  margin-right: 8px;
+  width: 26px;
   vertical-align: middle;
 }
 
@@ -53,8 +46,12 @@ button {
   flex-direction: row;
   align-items: center;
   margin-right: 6px;
+  margin-bottom: 0;
 
 }
 
+#favorites {
+    margin-right: 12px;
+}
     
 </style>

@@ -2,11 +2,27 @@
 import { onMount } from 'svelte';
 export let params = {}
 let addFavorite = () => {
-    localStorage.setItem("favorites", params.first)
+
+    let favorites;
+
+    if (localStorage.getItem("favorites")) {
+
+        favorites = JSON.parse(localStorage.getItem("favorites"))
+        if(!favorites.includes(params.first)){
+            favorites = [params.first, ...favorites] 
+         }
+
+    } else {
+        favorites = [params.first];
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(favorites))
+
+
 }
 
 let backgroundImage
-let description = "kommer her"
+let description
 let audioSrc
 let color
 
@@ -15,32 +31,32 @@ let color
             backgroundImage = "../img/excited.jpg"
             color = ""
             description = ""
-            audioSrc = "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+            audioSrc = "http://live.radioart.com/fStress_relief.mp3"
         } else if (params.first === "calm") {
             backgroundImage = "../img/calm.jpg"
             color = ""
             description = ""
-            audioSrc = "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+            audioSrc = "http://live.radioart.com/fSpa.mp3?dlid="
         } else if (params.first === "surprised") {
             backgroundImage = "../img/surprised.jpg"
             color = ""
             description = ""
-            audioSrc = "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+            audioSrc = "http://live.radioart.com/fMeditation.mp3"
         } else if (params.first === "happy") {
             backgroundImage = "../img/happy.jpg"
             color = ""
             description = ""
-            audioSrc = "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+            audioSrc = "http://live.radioart.com/fPositivity.mp3"
         } else if (params.first === "angry") {
             backgroundImage = "../img/angry.jpg"
             color = ""
             description = ""
-            audioSrc = "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+            audioSrc = "http://live.radioart.com/fMantras.mp3"
         } else if (params.first === "sad") {
             backgroundImage = "../img/sad.jpg"
             color = ""
             description = ""
-            audioSrc = "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"
+            audioSrc = "http://live.radioart.com/fAura.mp3"
         } else {
             alert("Feil id")
         }
@@ -50,17 +66,14 @@ let color
 
 <main style="background-image: url('{backgroundImage}')">
 
-    <audio controls src=""></audio>
-
     <div class="splash-box">    
-    <button id="play">▶</button>
 
-    <h1>{params.first}</h1>
-    <h2>Spill av og pust ut...</h2>
+    <h1 class="title">{params.first}</h1>
     <p>{description}</p>
+    <audio controls preload src={audioSrc}></audio>
 
-    <button id="addFavorite" on:click={addFavorite} > + Legg til favoritt</button>
     </div>
+    <button id="addFavorite" on:click={addFavorite} > + Legg til favoritt</button>
 </main>
 
 <style>
@@ -74,25 +87,28 @@ let color
         padding: .9rem;
         background-color: white;
         color: #DD6A77;
-        letter-spacing: .1rem;
+        letter-spacing: .07rem;
+        position: absolute;
+        bottom: 12px;
+        margin: 0 auto;
+        right: 0;
+        left: 0;
+        text-align: center;
+        cursor: pointer;
     }
 
     .splash-box {
         text-align: center;
-        background-color: white;
-        border-radius: .6rem;
-        margin-top: 30%;
+        margin-top: 10%;
         padding: 2rem;
-        margin: 60px 160px;
-
+        color: white;    
     }
 
-    #play {
-        height: 7rem;
-        width: 7rem;
-        background: white;
-        border-radius: 80%;
-        background-color: #FFFFFF;
-        color: #DD6A77;
-    }
+    .title {
+        font-weight: 200;
+        font-style: italic;
+        font-size: 104pt;
+        letter-spacing: .2rem;
+        text-shadow: 1px 2px #00000040;    }
 </style>
+
