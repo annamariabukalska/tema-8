@@ -2,7 +2,7 @@
 
 export let params = {}
 let addFavorite = () => {
-    alert("comming soon")
+    localStorage.setItem("favorites", params.first)
 }
 </script>
 
@@ -42,7 +42,7 @@ let addFavorite = () => {
         border-radius: .6rem;
         margin-top: 30%;
         padding: 2rem;
-        margin: 100px;
+        margin: 60px 160px;
 
     }
 

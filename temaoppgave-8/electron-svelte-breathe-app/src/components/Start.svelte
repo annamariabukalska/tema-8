@@ -1,6 +1,6 @@
 <script>
 import MoodView from './MoodView.svelte'
-import { push } from 'svelte-spa-router'
+import MoodButton from './MoodButton.svelte'
 
 
 let info = 'Hvordan føler du deg idag?'
@@ -9,14 +9,16 @@ let info = 'Hvordan føler du deg idag?'
 <main>
 <div class="welcome-container">
 	<h1>Breathe</h1>
-	<p  class="welcome-text">{info}</p>
+	<p class="welcome-text">{info}</p>
 	<div class="button-grid">
-		<button class="mood-button" id="excited" on:click={ () => push('/mood/excited') }>Excited</button>
-		<button class="mood-button" id="calm" on:click={ () => push('/mood/calm') }>Calm</button>
-		<button class="mood-button" id="surprised" on:click={ () => push('/mood/surprised') }>Surprised</button>
-		<button class="mood-button" id="happy" on:click={ () => push('/mood/happy') }>Happy</button>
-		<button class="mood-button" id="angry" on:click={ () => push('/mood/angry') }>Angry</button>
-		<button class="mood-button" id="sad" on:click={ () => push('/mood/sad')}>Sad</button>
+
+	<MoodButton id="excited" title="Excited"/>
+	<MoodButton id="calm" title="Calm"/>
+	<MoodButton id="surprised" title="Surprised"/>
+	<MoodButton id="happy" title="Happy"/>
+	<MoodButton id="angry" title="Angry"/>
+	<MoodButton id="sad" title="Sad"/>
+
 	</div>
 </div>
 
@@ -26,6 +28,7 @@ let info = 'Hvordan føler du deg idag?'
 main {
 	text-align: center;
 	background-color: #FAFAFA;
+	padding-top: 10%;
 }
 
 .welcome-container {
@@ -37,6 +40,7 @@ main {
 	margin-top: 24px;
 	overflow: auto;
 	box-shadow: 0px 2px 8px #5f5f5f3d;
+	padding-bottom: 6%;
 }
 .welcome-text {
 	font-style: italic;
@@ -52,37 +56,8 @@ main {
 	height: 30vh;
 
 }
- 
-.mood-button {
-	display: grid;
-	text-align: center;
-	min-width: 240px;
-	margin: 10px auto;
-	padding: 1rem;
-	border-radius: 4rem;
-	border: 0;
-	cursor: pointer;
-	box-shadow: #000000 11%;
-}
 
-#excited {
-	background-color: #DCD1E4;
-}	
-#calm {
-	background-color: #F7E5CD;
-}
-#surprised {
-	background-color: #B5DEB9;
-}
-#happy {
-	background-color: #F6DDE0;
-}
-#angry {
-	background-color: #CCDAFB;
-}
-#sad {
-	background-color: #F5F5F5;
-}
+
 h1 {
 	color: black;
 	text-transform: uppercase;
