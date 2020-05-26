@@ -7,7 +7,10 @@
 			info = 'Notification clicked'
 		}
   }
-  
+
+
+let active = { Mandag: false, Tirsdag: false, Onsdag: false, Torsdag: false, Fredag: false, Lørdag: false, Søndag: false };
+
 </script>
 
 <main>
@@ -15,25 +18,25 @@
 
     <div class="reminder">
      <section class="item1">
-           <div class="circle">Mandag</div>
+           <div class="circle" class:active={active.Mandag} on:click={() => active.Mandag = !active.Mandag}>Mandag</div>
    </section>
      <section class="item2">
-           <div class="circle">Tirsdag</div>
+           <div class="circle" class:active={active.Tirsdag} on:click={() => active.Tirsdag = !active.Tirsdag}>Tirsdag</div>
    </section>
      <section class="item3">
-           <div class="circle">Onsdag</div>
+           <div class="circle" class:active={active.Onsdag} on:click={() => active.Onsdag = !active.Onsdag}>Onsdag</div>
    </section>
      <section class="item4">
-           <div class="circle">Torsdag</div>
+           <div class="circle" class:active={active.Torsdag} on:click={() => active.Torsdag = !active.Torsdag}>Torsdag</div>
    </section>
      <section class="item5">
-           <div class="circle">Fredag</div>
+           <div class="circle" class:active={active.Fredag} on:click={() => active.Fredag = !active.Fredag}>Fredag</div>
    </section>
      <section class="item6">
-           <div class="circle">Lørdag</div>
+           <div class="circle" class:active={active.Lørdag} on:click={() => active.Lørdag = !active.Lørdag}>Lørdag</div>
    </section>
      <section class="item7">
-           <div class="circle">Søndag</div>
+           <div class="circle" class:active={active.Søndag} on:click={() => active.Søndag = !active.Søndag}>Søndag</div>
    </section>
 
      </div>
@@ -44,6 +47,12 @@
 </main>
 
 <style>
+
+.active {
+  border: 2px solid #707070;
+  background: #566047 !important;
+  color: white !important;
+}
 
 main {
     text-align: center;
