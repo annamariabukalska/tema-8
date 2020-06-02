@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile-vanilla</title>
+    <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="./index.css"></head>
+<body>
+    <nav>
+        <a class="active" href="#">Om skolen</a>
+        <a href="#">Om fritidsaktiviteter</a>
+        <a href="https://seeklogo.com/images/S/school-education-inspiration-logo-A8AD603C93-seeklogo.com.png">
+        </a> 
+
+        </nav>
+
+    <main>
+        <div class="form" id='form'>
+            <h1>Registrering</h1>
+                <input id="name" placeholder="*Navn" type="text">
+                <input id="email" placeholder="*E-post" type="email">
+                <input id="inpPassword" type="password" placeholder="*Passord">
+
+                <h1>Hva er din favoritt aktivitet?</h1>
+                <input id="aktivitet1" type="checkbox">
+                <label for="aktivitet1">Se på TV</label>
+
+                <input id="aktivitet2" type="checkbox">
+                <label for="aktivitet2">Matlaging</label>
+
+                <input id="aktivitet3" type="checkbox">
+                <label for="aktivitet3">Gaming</label>
+
+                <input id="aktivitet4" type="checkbox" value="Lese">
+                <label for="aktivitet4">Lese</label>
+
+
+
+                <input id="antallVenner" placeholder="Antall venner på skolen?" type="text">
+                <input id="antallVennerTotalt" placeholder="Antall venner alt i alt?" type="text">
+                <p id="info"></p>
+                <input id="checkbox" type="checkbox" />
+                <label for="checkbox">*Aksept av vilkår og betingelser 
+                </label>
+                <button id="submit" class="submitButton">OK</button>
+    </div>
+    </main>
+
+    <script src="./index.js"></script>
+
+</body>
+</html>
+
+
+
