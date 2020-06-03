@@ -1,12 +1,12 @@
 # Breathe
 
-## Applikasjonsutvikling 
-
-### Tema
-Helse, meditasjon 
-
 ### Om Breathe
 En samling av meditasjonssanger som man kan lagre som favoritter og en påminnelse til å utføre en meditasjon, slik at man blir mer motivert til å puste i travelt hverdag. Personlig tilpasset meditasjon: skreddersy din meditasjon med veiledet innledning. Meditasjonspåminnelser hjelper deg å være oppmerksomt tilstede gjennom hele dagen.
+
+### Plattformer
+* Mac
+* Windows
+* Linux
 
 ### Målgruppe
 Applikasjon er rettet mot som trenger ro i hverdagen og påminnelser om å gjøre meditasjoner. 
