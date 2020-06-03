@@ -1,4 +1,5 @@
 # Breathe
+
 ## Applikasjonsutvikling 
 
 ### Tema
@@ -10,16 +11,18 @@ En samling av meditasjonssanger som man kan lagre som favoritter og en påminnel
 ### Målgruppe
 Applikasjon er rettet mot som trenger ro i hverdagen og påminnelser om å gjøre meditasjoner. 
 
-## Produktside
+## Skjermbilder
 
-![Last ned – 2](https://user-images.githubusercontent.com/56019427/83649237-409f4780-a5b7-11ea-8d3e-b434c1fa6653.png)
-![Last ned – 3](https://user-images.githubusercontent.com/56019427/83649248-4432ce80-a5b7-11ea-8fbd-65d6c9638d32.png)
-
-## Applikasjon
 <img width="912" alt="Skjermbilde 2020-06-03 kl  16 29 17" src="https://user-images.githubusercontent.com/56019427/83649485-8b20c400-a5b7-11ea-97c6-d63048732939.png">
 <img width="961" alt="Skjermbilde 2020-06-03 kl  16 29 35" src="https://user-images.githubusercontent.com/56019427/83649492-8d831e00-a5b7-11ea-96aa-2ab77a31a7d0.png">
 <img width="961" alt="Skjermbilde 2020-06-03 kl  16 29 44" src="https://user-images.githubusercontent.com/56019427/83649502-8f4ce180-a5b7-11ea-8037-628ae1273fde.png">
 <img width="961" alt="Skjermbilde 2020-06-03 kl  16 29 54" src="https://user-images.githubusercontent.com/56019427/83649515-9247d200-a5b7-11ea-8afa-40b22004f3f7.png">
+
+
+## Produktside
+
+![Last ned – 2](https://user-images.githubusercontent.com/56019427/83649237-409f4780-a5b7-11ea-8d3e-b434c1fa6653.png)
+![Last ned – 3](https://user-images.githubusercontent.com/56019427/83649248-4432ce80-a5b7-11ea-8fbd-65d6c9638d32.png)
 
 
 # Electron Forge + Svelte  Starter
