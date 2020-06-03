@@ -1,7 +1,7 @@
 # Breathe
 ## Applikasjonsutvikling 
 
-### Tema: 
+### Tema
 Helse, meditasjon 
 
 ### Om Breathe
