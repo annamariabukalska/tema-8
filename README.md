@@ -30,6 +30,13 @@ Mål:
     - Iterating arrays with map()
     - JSON object from file
  - Bygge en nettside med JSON data og stylling
+ - Utility APP (Pomodoro)
+ - time in JavaScript: the Date object, setTimeout/setInterval, app idea, problem solving
+ - vanilla nettside med fetch fra borded API
+ - Svelte komponenter
+ - fetch (data API's): Wordmuse
+ - Electron basic med Svelte: bruke Electron til å konvertere en nettside til en desktop app og basale funksjonskald fra JavaScript til OS
+ - Electron uitility apps
  - Applikasjon "Breathe"
      
     
